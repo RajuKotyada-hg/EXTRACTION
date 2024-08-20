@@ -1,0 +1,481 @@
+{
+  "_id": {
+    "$oid": "65a806809556c97d6406fe9d"
+  },
+  "pms": "choiceadvantage",
+  "reportHeads": [
+    {
+      "head": "Final Transaction Closeout",
+      "thresholdlevel": 80,
+      "configs": [
+        {
+          "config1": {
+            "ignore_contains": [
+              "Business Date:"
+            ],
+            "drop_empty_cols": true,
+            "drop_empty_and_shift_left": true,
+            "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "account_desc_label": 0,
+            "actual_today_debits": [
+              2
+            ],
+            "adjusted_credits": 3,
+            "net_amount": 4,
+            "split_rows": true,
+            "split_cols": [],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Transaction Type: ACCOUNTS RECEIVABLE",
+                "extension": "",
+                "category": "ACCOUNTS RECEIVABLE",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Type: CASH",
+                "ignore_words": [
+                  "Transaction Type: ACCOUNTS RECEIVABLE",
+                  "Total For ACCOUNTS",
+                  "RECEIVABLE:"
+                ]
+              },
+              {
+                "start": "Transaction Type: CASH",
+                "extension": "",
+                "category": "CASH",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Type: CREDIT CARDS",
+                "ignore_words": [
+                  "Transaction Type: CASH",
+                  "Total For CASH:",
+                  "Transaction Type: CREDIT CARDS"
+                ]
+              },
+              {
+                "start": "Transaction Type: CREDIT CARDS",
+                "extension": "",
+                "category": "CREDIT CARDS",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Type: MISCELLANEOUS",
+                "ignore_words": [
+                  "Total For CREDIT CARDS:",
+                  "Transaction Type: CREDIT CARDS"
+                ]
+              },
+              {
+                "start": "Transaction Type: ROOM REVENUE",
+                "extension": "",
+                "category": "ROOM REVENUE",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Type: TAX",
+                "ignore_words": [
+                  "Transaction Type: ROOM REVENUE",
+                  "Transaction Type: TAX",
+                  "Total For ROOM REVENUE:"
+                ]
+              },
+              {
+                "start": "Transaction Type: TAX",
+                "extension": "",
+                "category": "TAX",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Transaction Type: TAX",
+                  "Total For TAX:",
+                  "Totals:"
+                ]
+              }
+            ],
+            "submission_type": ""
+          },
+          "config2": {
+            "ignore_contains": [
+              "Business Date:"
+            ],
+            "drop_empty_cols": true,
+            "drop_empty_and_shift_left": true,
+            "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "account_desc_label": 0,
+            "actual_today_debits": [
+              2
+            ],
+            "adjusted_credits": 3,
+            "net_amount": 4,
+            "split_rows": true,
+            "split_cols": [],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Transaction Type: ACCOUNTS RECEIVABLE",
+                "extension": "",
+                "category": "ACCOUNTS RECEIVABLE",
+                "end": "Transaction Type: CASH",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Transaction Type: ACCOUNTS RECEIVABLE",
+                  "Total For ACCOUNTS",
+                  "RECEIVABLE:"
+                ]
+              },
+              {
+                "start": "Transaction Type: CASH",
+                "extension": "",
+                "category": "CASH",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Type: CREDIT CARDS",
+                "ignore_words": [
+                  "Transaction Type: CASH",
+                  "Total For CASH:",
+                  "Transaction Type: CREDIT CARDS"
+                ]
+              },
+              {
+                "start": "Transaction Type: CREDIT CARDS",
+                "extension": "",
+                "category": "CREDIT CARDS",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Type: MISCELLANEOUS",
+                "ignore_words": [
+                  "Total For CREDIT CARDS:",
+                  "Transaction Type: CREDIT CARDS"
+                ]
+              },
+              {
+                "start": "Transaction Type: ROOM REVENUE",
+                "extension": "",
+                "category": "ROOM REVENUE",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Type: TAX",
+                "ignore_words": [
+                  "Transaction Type: ROOM REVENUE",
+                  "Transaction Type: TAX",
+                  "Total For ROOM REVENUE:"
+                ]
+              },
+              {
+                "start": "Transaction Type: TAX",
+                "extension": "",
+                "category": "TAX",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Transaction Type: TAX",
+                  "Total For TAX:",
+                  "Totals:"
+                ]
+              }
+            ],
+            "submission_type": ""
+          }
+        }
+      ],
+      "DatePosition": 0
+    },
+    {
+      "head": "Hotel Statistics",
+      "thresholdlevel": 80,
+      "configs": [
+        {
+          "config1": {
+            "drop_empty_cols": true,
+            "ignore_contains": [
+              "Business Date:"
+            ],
+            "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "account_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Performance Statistics",
+                "extension": "",
+                "end": "Revenue",
+                "category": "Performance Statistics",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Performance Statistics"
+                ]
+              },
+              {
+                "start": "Revenue",
+                "extension": "",
+                "end": "Total Revenue",
+                "category": "Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Revenue",
+                  "Total Room Revenue",
+                  "Total Revenue"
+                ]
+              },
+              {
+                "start": "Guest Statistics",
+                "extension": "",
+                "category": "Guest Statistics",
+                "ps_curr_stat":"USD",
+                "ignore_words": [],
+                "add_words": [
+                  "Average Adults Per Room",
+                  "Average Rate Per Adult",
+                  "Average Revenue Per Adult"
+                ]
+              }
+            ],
+            "submission_type": ""
+          },
+          "config2": {
+            "drop_empty_cols": true,
+            "ignore_contains": [
+              "Business Date:"
+            ],
+           "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "account_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Performance Statistics",
+                "extension": "",
+                "end": "Revenue",
+                "category": "Performance Statistics",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Performance Statistics"
+                ]
+              },
+              {
+                "start": "Revenue",
+                "extension": "",
+                "end": "Total Revenue",
+                "category": "Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Revenue",
+                  "Total Room Revenue",
+                  "Total Revenue"
+                ]
+              },
+              {
+                "start": "Guest Statistics",
+                "extension": "",
+                "category": "Guest Statistics",
+                "ps_curr_stat":"USD",
+                "ignore_words": [],
+                "add_words": [
+                  "Average Adults Per Room",
+                  "Average Rate Per Adult",
+                  "Average Revenue Per Adult"
+                ]
+              }
+            ],
+            "submission_type": ""
+          }
+        },
+        {
+          "config1": {
+            "drop_empty_cols": true,
+            "ignore_contains": [
+              "Business Date:"
+            ],
+            "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "account_desc_label": 0,
+            "stat": [
+              1
+            ],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Room Statistics",
+                "extension": "",
+                "end": "Performance Statistics",
+                "category": "Room Statistics",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "Room Statistics"
+                ]
+              },
+              {
+                "start": "Guest Statistics",
+                "extension": "",
+                "end": "Total Number of Guests",
+                "category": "Guest Statistics",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "Guest Statistics",
+                  "Total Number of Guests"
+                ]
+              },
+              {
+                "start": "Today's Activity",
+                "extension": "",
+                "category": "Today's Activity",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "Today's Activity"
+                ]
+              }
+            ]
+          },
+          "config2": {
+            "drop_empty_cols": true,
+            "ignore_contains": [
+              "Business Date:"
+            ],
+            "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "account_desc_label": 0,
+            "stat": [
+              1
+            ],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Room Statistics",
+                "extension": "",
+                "end": "Performance Statistics",
+                "category": "Room Statistics",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "Room Statistics"
+                ]
+              },
+              {
+                "start": "Guest Statistics",
+                "extension": "",
+                "end": "Total Number of Guests",
+                "category": "Guest Statistics",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "Guest Statistics",
+                  "Total Number of Guests"
+                ]
+              },
+              {
+                "start": "Today's Activity",
+                "extension": "",
+                "category": "Today's Activity",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "Today's Activity"
+                ]
+              }
+            ],
+            "submission_type": ""
+          }
+        }
+      ],
+      "DatePosition": 0
+    },
+    {
+      "head": "Ledger Activity Report",
+      "thresholdlevel": 50,
+      "edge_tol": 500,
+      "configs": [
+        {
+          "config1": {
+            "drop_empty_cols": true,
+            "ignore_contains": [
+              "Business Date:"
+            ],
+            "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "drop_empty_and_shift_left": true,
+            "account_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Guest",
+                "extension": "",
+                "end": "Accounts Receivable",
+                "category": "Guest",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Guest"
+                ]
+              },
+              {
+                "start": "Accounts Receivable",
+                "extension": "",
+                "end": "Advance Deposit",
+                "category": "Accounts Receivable",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Accounts Receivable"
+                ]
+              },
+              {
+                "start": "Advance Deposit",
+                "extension": "",
+                "category": "Advance Deposit",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Advance Deposit",
+                  "Total Balance Forward"
+                ]
+              }
+            ],
+            "submission_type": ""
+          },
+          "config2": {
+            "drop_empty_cols": true,
+            "ignore_contains": [
+              "Business Date:"
+            ],
+            "drop_empty_and_shift_left": true,
+            "cn1": "category",
+            "cn3":"ps_curr_stat",
+            "account_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Guest",
+                "extension": "",
+                "end": "Accounts Receivable",
+                "category": "Guest",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Guest"
+                ]
+              },
+              {
+                "start": "Accounts Receivable",
+                "extension": "",
+                "end": "Advance Deposit",
+                "category": "Accounts Receivable",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Accounts Receivable"
+                ]
+              },
+              {
+                "start": "Advance Deposit",
+                "extension": "",
+                "category": "Advance Deposit",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Advance Deposit",
+                  "Total Balance Forward"
+                ]
+              }
+            ],
+            "submission_type": ""
+          }
+        }
+      ],
+      "DatePosition": 0
+    }
+  ]
+}

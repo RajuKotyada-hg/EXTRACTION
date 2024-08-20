@@ -1,0 +1,430 @@
+{
+  "_id": {
+    "$oid": "6551d3b16f6b962006875ac0"
+  },
+  "pms": "fosse",
+  "reportHeads": [
+    {
+      "head": "D A I L Y   C L O S I N G   R E P O R T",
+      "type": "pattern",
+      "patterns": [
+        {
+          "lineitem_position": "2",
+          "ignore_words": [
+            "SEQ CD",
+            "MBV Occ Premium",
+            "Early Departure Rebat",
+            "MBV Redemption",
+            "Escape Package",
+            "Pet Charge",
+            "Pet Cleaning Fee"
+          ],
+          "lineitem_desc_label": "ACCOUNT DESCRIPTION",
+          "today_actual_debits_label": [
+            "DEBIT",
+            "CREDIT"
+          ],
+          "submission_type": "Summary",
+          "end_seq": "---------",
+          "start_seq": "SEQ CD",
+          "commonExtensions": [
+            "ptd",
+            "ytd"
+          ],
+          "triggers": [
+            {
+              "start": "(UPDATING FILES)\\nCG ",
+              "end": "------\\nROOMS\\n-----"
+            }
+          ]
+        },
+        {
+          "lineitem_position": "2",
+          "ignore_words": [
+            "SEQ CD",
+            "Room Rebate-Bus Trans",
+            "Room Rebate-Plea Tran",
+            "Room Rebate-Lease/Con",
+            "oom Rebate-Groups",
+            "Room Rebate-Special",
+            "Room Rebate-G.N.S.",
+            "Room Rebate-Day Rate",
+            "Rate Adjustment",
+            "Rooms Coupon Promo Re",
+            "Rollaway Bed Rental"
+          ],
+          "lineitem_desc_label": "ACCOUNT DESCRIPTION",
+          "today_actual_debits_label": [
+            "DEBIT",
+            "CREDIT"
+          ],
+          "submission_type": "Detailed",
+          "end_seq": "---------",
+          "start_seq": "SEQ CD",
+          "commonExtensions": [
+            "ptd",
+            "ytd"
+          ],
+          "triggers": [
+            {
+              "start": "MBV Occ Premium",
+              "end": "------\\nROOMS\\n-----"
+            }
+          ]
+        },
+        {
+          "lineitem_position": "2",
+          "ignore_words": [
+            "SEQ CD"
+          ],
+          "lineitem_desc_label": "ACCOUNT DESCRIPTION",
+          "today_actual_debits_label": [
+            "DEBIT",
+            "CREDIT"
+          ],
+          "submission_type": "Verification",
+          "end_seq": "---------",
+          "start_seq": "SEQ CD",
+          "commonExtensions": [
+            "ptd",
+            "ytd"
+          ],
+          "triggers": [
+            {
+              "start": "------\\nROOMS\\n-----",
+              "end": "------\\nROOMS\\n-----"
+            }
+          ]
+        },
+        {
+          "lineitem_position": "2",
+          "ignore_words": [
+            "SEQ CD",
+            "ROOMS",
+            "FOOD",
+            "BEVERAGE",
+            "FUNCTION ROOMS",
+            "MEMBERSHIP",
+            "FAX INCOME",
+            "REBATE PHONE",
+            "OTHER INCOME",
+            "CYC",
+            "A/R EXPENSES",
+            "ADMIN PHONE",
+            "NON-REVENUE",
+            "TAXES DUE"
+          ],
+          "lineitem_desc_label": "ACCOUNT DESCRIPTION",
+          "today_actual_debits_label": [
+            "DEBIT",
+            "CREDIT"
+          ],
+          "submission_type": "Detailed",
+          "end_seq": "--------------",
+          "start_seq": "SEQ CD",
+          "commonExtensions": [
+            "ptd",
+            "ytd"
+          ],
+          "triggers": [
+            {
+              "start": "-----\\nROOMS\\n-----",
+              "end": "------\\nOTHER EXPENSES\\n-----"
+            },
+            {
+              "start": "-----\\nTAXES DUE\\n-----",
+              "end": "------\\nMISC A&L\\n-----"
+            }
+          ]
+        },
+        {
+          "lineitem_position": "2",
+          "ignore_words": [
+            "SEQ CD",
+            "ACCOUNT DESCRIPTION",
+            "OTHER EXPENSES"
+          ],
+          "lineitem_desc_label": "ACCOUNT DESCRIPTION",
+          "today_actual_debits_label": [
+            "DEBIT"
+          ],
+          "submission_type": "Detailed",
+          "end_seq": "--------------",
+          "start_seq": "SEQ CD",
+          "commonExtensions": [
+            "ptd",
+            "ytd"
+          ],
+          "triggers": [
+            {
+              "start": "-----\\nOTHER EXPENSES\\n-----",
+              "end": "------\\nTAXES DUE\\n-----"
+            }
+          ]
+        },
+        {
+          "lineitem_position": "2",
+          "ignore_words": [
+            "SEQ CD",
+            "OTHER EXPENSES"
+          ],
+          "lineitem_desc_label": "ACCOUNT DESCRIPTION",
+          "today_actual_debits_label": [
+            "CREDIT"
+          ],
+          "submission_type": "Detailed",
+          "end_seq": "--------------",
+          "start_seq": "SEQ CD",
+          "commonExtensions": [
+            "ptd",
+            "ytd"
+          ],
+          "triggers": [
+            {
+              "start": "-----\\nOTHER EXPENSES\\n-----",
+              "end": "------\\nTAXES DUE\\n-----"
+            }
+          ],
+          "ref": "exemption",
+          "ref_sign": "negative"
+        },
+        {
+          "lineitem_position": "2",
+          "ignore_words": [
+            "SEQ CD",
+            "SEQ CD",
+            "MISC A&L",
+            "SETTLEMENT",
+            "POSTINGS TO A/R",
+            "R E C E I P T S"
+          ],
+          "lineitem_desc_label": "ACCOUNT DESCRIPTION",
+          "today_actual_debits_label": [
+            "CREDIT"
+          ],
+          "submission_type": "Detailed",
+          "end_seq": "--------------",
+          "start_seq": "SEQ CD",
+          "commonExtensions": [
+            "ptd",
+            "ytd"
+          ],
+          "triggers": [
+            {
+              "start": "-----\\nMISC A&L\\n-----",
+              "end": "------\\nPOSTINGS TO CREDIT CARDS\\n-----"
+            }
+          ]
+        }
+      ],
+      "DatePosition": 0
+    },
+    {
+      "head": "D A I L Y   C L O S I N G   R E P O R T   S U M M A R Y",
+      "type": "impkeywords",
+      "keywords": [
+        {
+          "start": "A D V A N C E    D E P O S I T   B A L A N C E",
+          "end": "CREDIT CARD POSTINGS",
+          "imp_words": [
+            "DEPOSITS BEGINNING BALANCE",
+            "= NEW DEPOSITS BALANCE"
+          ],
+          "ref": "Advance Deposit Balance"
+        },
+        {
+          "start": "G U E S T    L E D G E R    B A L A N C E",
+          "end": "C I T Y    L E D G E R    B A L A N C E",
+          "imp_words": [
+            "BALANCE-PREVIOUS DAY:",
+            "= CURRENT GUEST LEDGER:"
+          ],
+          "ref": "Guest Ledger Balance"
+        },
+        {
+          "start": "C I T Y    L E D G E R    B A L A N C E",
+          "end": "N E T  H O T E L  B A L A N C E",
+          "imp_words": [
+            "BALANCE-PREVIOUS DAY:",
+            "A/R AGING BALANCE:"
+          ],
+          "ref": "City Ledger Balance"
+        }
+      ],
+      "submission_type": "Verification",
+      "ignore_words": [],
+      "Value_type": "amount",
+      "DatePosition": 0
+    },
+    {
+      "head": "D A I L Y   C L O S I N G   R E P O R T   S U M M A R Y",
+      "type": "impkeywords",
+      "keywords": [
+        {
+          "start": "A D V A N C E    D E P O S I T   B A L A N C E",
+          "end": "CREDIT CARD POSTINGS",
+          "imp_words": [
+            "ADD NEW DEPOSITS TODAY",
+            "LESS DEPOSITS KEPT",
+            "LESS TRANSFERS TO GUEST LEDGER",
+            "LESS DEPOSITS REFUNDED",
+            "LESS KEPT COMMISSION"
+          ],
+          "ref": "Advance Deposit Balance"
+        },
+        {
+          "start": "G U E S T    L E D G E R    B A L A N C E",
+          "end": "C I T Y    L E D G E R    B A L A N C E",
+          "imp_words": [
+            "NET ADDITION"
+          ],
+          "ref": "Guest Ledger Balance"
+        },
+        {
+          "start": "C I T Y    L E D G E R    B A L A N C E",
+          "end": "N E T  H O T E L  B A L A N C E",
+          "imp_words": [
+            "TODAY'S POSTINGS",
+            "TODAY'S UPDATED BATCHES",
+            "=CURRENT CITY LEDGER",
+            "AMOUNT OF OPEN BATCHES"
+          ],
+          "ref": "City Ledger Balance"
+        }
+      ],
+      "submission_type": "Detailed",
+      "ignore_words": [],
+      "Value_type": "amount",
+      "DatePosition": 0
+    },
+    {
+      "head": "D A I L Y   C L O S I N G   R E P O R T   S U M M A R Y",
+      "type": "impkeywords",
+      "keywords": [
+        {
+          "start": "A D V A N C E    D E P O S I T   B A L A N C E",
+          "end": "TOTAL HOTEL BALANCE",
+          "imp_words": [
+            "CREDIT CARD POSTINGS",
+            "NET CASH DEPOSIT",
+            "ADVANCE DEPOSIT BALANCE",
+            "GUEST LEDGER BALANCE",
+            "A/R AGING BALANCE"
+          ],
+          "ref": ""
+        }
+      ],
+      "submission_type": "Summary",
+      "ignore_words": [
+        "\"NET CASH DEPOSIT ABOVE:\"",
+        "*"
+      ],
+      "Value_type": "amount",
+      "DatePosition": 0
+    },
+    {
+      "head": "Daily Segmentation Report",
+      "type": "pattern",
+      "patterns": [
+        {
+          "lineitem_position": "1",
+          "ignore_words": [],
+          "lineitem_desc_label": "MKT SEG",
+          "today_actual_debits_label": [
+            "total_revenue"
+          ],
+          "submission_type": "Detailed",
+          "end_seq": "Total People",
+          "start_seq": "MKT SEG",
+          "commonExtensions": [
+            "multipleOcc",
+            "total"
+          ],
+          "triggers": [],
+          "stat": "total_#rms"
+        }
+      ],
+      "DatePosition": 1
+    },
+    {
+      "head": "Revenue Report",
+      "type": "impkeywords",
+      "keywords": [
+        {
+          "start": "GROSS HOTEL SALES",
+          "end": "MANUAL POSTINGS",
+          "imp_words": [
+            "ROOMS OCCUPIED",
+            "ROOMS VACANT",
+            "OUT OF ORDER",
+            "COMPLIMENTARY ROOMS"
+          ],
+          "ref": ""
+        }
+      ],
+      "submission_type": "Detailed",
+      "ignore_words": [],
+      "Value_type": "stat",
+      "DatePosition": 0
+    },
+    {
+      "head": "Revenue Report",
+      "type": "impkeywords",
+      "keywords": [
+        {
+          "start": "GROSS HOTEL SALES",
+          "end": "MANUAL POSTINGS",
+          "imp_words": [
+            "TOTAL ROOMS",
+            "TOTAL GUESTS"
+          ],
+          "ref": ""
+        }
+      ],
+      "submission_type": "Summary",
+      "ignore_words": [],
+      "Value_type": "stat",
+      "DatePosition": 0
+    },
+    {
+      "head": "Revenue Report",
+      "type": "impkeywords",
+      "keywords": [
+        {
+          "start": "AVG LENGTH OF STAY",
+          "end": "CANCELLED RESERVATIONS",
+          "imp_words": [
+            "AVG RATE PER ROOM",
+            "OCCUPANCY PCT",
+            "REV PAR"
+          ],
+          "ref": ""
+        }
+      ],
+      "submission_type": "Verification",
+      "ignore_words": [],
+      "Value_type": "stat",
+      "DatePosition": 0
+    },
+    {
+      "head": "Daily Segmentation Report",
+      "type": "impkeywords",
+      "keywords": [
+        {
+          "start": "Total Rooms:",
+          "end": "--------------",
+          "imp_words": [
+            "Total Revenue"
+          ],
+          "ref": ""
+        }
+      ],
+      "submission_type": "Verification",
+      "ignore_words": [
+        "Total Rooms"
+      ],
+      "Value_type": "stat",
+      "DatePosition": 1
+    }
+  ]
+}

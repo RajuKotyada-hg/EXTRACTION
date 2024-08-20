@@ -1,0 +1,449 @@
+{
+  "_id": {
+    "$oid": "65a806809556c97d6406fea0"
+  },
+  "pms": "opera",
+  "reportHeads": [
+    {
+      "head": "Market Code Statistics",
+      "thresholdlevel": 70,
+      "configs": [
+        {
+          "config1": {
+            "drop_empty_cols": true,
+            "remove_head": 1,
+            "split_cols": [],
+            "split_rows": true,
+            "lineitem_desc_label": 1,
+            "cn3":"ps_curr_stat",
+            "ps_curr_stat":"USD",
+            "actual_today_debits": [
+              3
+            ],
+            "column_headers": [
+              "category"
+            ],
+            "columns": [
+              0
+            ],
+            "submission_type": "",
+            "merge_cols": [],
+            "stat": 2,
+            "remove_rows_with": [
+              "Description",
+              "Group Total",
+              "Market Group",
+              "Grand Total",
+              "Market Code",
+              "DAY",
+              "Market Code Statistics",
+              "Rooms All   Rate Class All",
+              "Filter",
+              "Days of Week All",
+              "Group by Market Group, Market Code",
+              "Sort Order Alphabetical",
+              "Holiday Inn Express & Suites Yorkville",
+              "06:00"
+            ]
+          },
+          "config2": {
+            "drop_empty_cols": true,
+            "remove_head": 1,
+            "split_cols": [],
+            "split_rows": true,
+            "lineitem_desc_label": 1,
+            "actual_today_debits": [
+              3
+            ],
+            "column_headers": [
+              "category"
+            ],
+            "columns": [
+              0
+            ],
+            "ps_curr_stat":"USD",
+            "submission_type": "",
+            "merge_cols": [],
+            "stat": 2,
+            "remove_rows_with": [
+              "Description",
+              "Group Total",
+              "Market Group",
+              "Grand Total",
+              "Market Code",
+              "DAY",
+              "Market Code Statistics",
+              "Rooms All   Rate Class All",
+              "Filter",
+              "Days of Week All",
+              "Group by Market Group, Market Code",
+              "Sort Order Alphabetical",
+              "Holiday Inn Express & Suites Yorkville",
+              "06:00"
+            ]
+          }
+        }
+      ],
+      "DatePosition": 0
+    },
+    {
+      "head": "Trial Balance",
+      "thresholdlevel": 70,
+      "configs": [
+        {
+          "config1": {
+            "drop_empty_cols": true,
+            "drop_empty_and_shift_left":true,
+            "column_headers": [
+              "sub_category"
+            ],
+            "cn1":"category",
+            "cn3":"ps_curr_stat",
+            "ps_curr_stat":"USD",
+            "columns": [
+              0
+            ],
+            "lineitem_desc_label": 1,
+            "actual_today_debits": [
+              2
+            ],
+            "split_rows": true,
+            "split_cols":[],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Revenue",
+                "extension": "",
+                "end": "Non Revenue",
+                "category":"Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Revenue",
+                  "Revenue Total"
+                ]
+              },
+              {
+                "start": "Non Revenue",
+                "extension": "",
+                "end": "Payment",
+                "category":"Non Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Non Revenue",
+                  "Non Revenue Total"
+                ]
+              },
+              {
+                "start": "Payment",
+                "extension": "",
+                "category":"Payment",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Total Today",
+                "ignore_words": [
+                  "Payment",
+                  "Payment Total"
+                ]
+              }
+            ]
+          },
+          "config2": {
+            "drop_empty_cols": true,
+            "drop_empty_and_shift_left":true,
+            "column_headers": [
+              "sub_category"
+            ],
+            "cn1":"category",
+            "cn3":"ps_curr_stat",
+            "columns": [
+              0
+            ],
+            "ps_curr_stat":"USD",
+            "lineitem_desc_label": 1,
+            "actual_today_debits": [
+              2
+            ],
+            "split_rows": true,
+            "split_cols":[],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Revenue",
+                "extension": "",
+                "end": "Non Revenue",
+                "category":"Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Revenue",
+                  "Revenue Total"
+                ]
+              },
+              {
+                "start": "Non Revenue",
+                "extension": "",
+                "end": "Payment",
+                "category":"Non Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Non Revenue",
+                  "Non Revenue Total"
+                ]
+              },
+              {
+                "start": "Payment",
+                "extension": "",
+                "category":"Payment",
+                "ps_curr_stat":"USD",
+                "end": "Transaction Total Today",
+                "ignore_words": [
+                  "Payment",
+                  "Payment Total"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "config1": {
+            "drop_empty_cols": true,
+            "drop_empty_and_shift_left":true,
+            "cn1":"category",
+            "cn3":"ps_curr_stat",
+            "columns": [
+              0
+            ],
+            "lineitem_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "split_rows": true,
+            "split_cols":[],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Guest Ledger",
+                "extension": "",
+                "end": "AR Ledger",
+                "category":"Guest Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Guest Ledger"
+                ]
+              },
+              {
+                "start": "AR Ledger",
+                "extension": "",
+                "end": "Deposit Ledger",
+                "category":"AR Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "AR Ledger"
+                ]
+              },
+              {
+                "start": "Deposit Ledger",
+                "extension": "",
+                "end":"Package Ledger",
+                "category":"Deposit Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Deposit Ledger"
+                ]
+              },
+              {
+                "start": "Package Ledger",
+                "extension": "",
+                "end":"Hotel Balance",
+                "category":"Package Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Package Ledger"
+                ]
+              }
+            ]
+          },
+          "config2": {
+            "drop_empty_cols": true,
+            "drop_empty_and_shift_left":true,
+            "cn1":"category",
+            "cn3":"ps_curr_stat",
+            "columns": [
+              0
+            ],
+            "lineitem_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "split_rows": true,
+            "split_cols":[],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Guest Ledger",
+                "extension": "",
+                "end": "AR Ledger",
+                "category":"Guest Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Guest Ledger"
+                ]
+              },
+              {
+                "start": "AR Ledger",
+                "extension": "",
+                "end": "Deposit Ledger",
+                "category":"AR Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "AR Ledger"
+                ]
+              },
+              {
+                "start": "Deposit Ledger",
+                "extension": "",
+                "end":"Package Ledger",
+                "category":"Deposit Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Deposit Ledger"
+                ]
+              },
+              {
+                "start": "Package Ledger",
+                "extension": "",
+                "end":"Hotel Balance",
+                "category":"Package Ledger",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Package Ledger"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "DatePosition": 0
+    },
+    {
+      "head": "Manager - Flash",
+      "alias_heads": [
+        "Manager's Report"
+      ],
+      "thresholdlevel": 70,
+      "configs": [
+        {
+          "config1": {
+            "cn3":"ps_curr_stat",
+            "lineitem_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "ps_curr_stat":"USD",
+            "ignore_contains":["Filter Calendar/Month to Date"],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "% Rooms Occupied",
+                "extension": "",
+                "end": "Other Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": []
+              },
+              {
+                "start": "% Rooms Occupied for Tomorrow",
+                "extension": "",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Individual Rooms In-House",
+                  "Group Rooms In-House",
+                  "Block Rooms In-House"
+                ]
+              }
+            ]
+          },
+          "config2": {
+            "cn3":"ps_curr_stat",
+            "lineitem_desc_label": 0,
+            "actual_today_debits": [
+              1
+            ],
+            "ignore_contains":["Filter Calendar/Month to Date"],
+            "ps_curr_stat":"USD",
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "% Rooms Occupied",
+                "extension": "",
+                "end": "Other Revenue",
+                "ps_curr_stat":"USD",
+                "ignore_words": []
+              },
+              {
+                "start": "% Rooms Occupied for Tomorrow",
+                "extension": "",
+                "ps_curr_stat":"USD",
+                "ignore_words": [
+                  "Individual Rooms In-House",
+                  "Group Rooms In-House",
+                  "Block Rooms In-House"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "config1": {
+            "lineitem_desc_label": 0,
+            "cn3":"ps_curr_stat",
+            "stat": [
+              1
+            ],
+            "ignore_contains":["Filter Calendar/Month to Date"],
+            "ps_curr_stat":"USD",
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Total Rooms in Hotel",
+                "extension": "",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "% Rooms Occupied for Tomorrow",
+                  "% Rooms Occupied for the Next 7 Days",
+                  "% Rooms Occupied for the Next 31 Days",
+                  "Individual Room Revenue",
+                  "Average Revenue per Block Rooms",
+                  "Average Room Revenue per Block Rooms"
+                ]
+              }
+            ]
+          },
+          "config2": {
+            "lineitem_desc_label": 0,
+            "cn3":"ps_curr_stat",
+            "stat": [
+              1
+            ],
+            "ps_curr_stat":"USD",
+            "ignore_contains":["Filter Calendar/Month to Date"],
+            "ref_col": 0,
+            "triggers": [
+              {
+                "start": "Total Rooms in Hotel",
+                "extension": "",
+                "ps_curr_stat":"RM",
+                "ignore_words": [
+                  "% Rooms Occupied for Tomorrow",
+                  "% Rooms Occupied for the Next 7 Days",
+                  "% Rooms Occupied for the Next 31 Days",
+                  "Individual Room Revenue",
+                  "Average Revenue per Block Rooms",
+                  "Average Room Revenue per Block Rooms"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "DatePosition": 0
+    }
+  ]
+}
